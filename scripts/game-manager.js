@@ -2,7 +2,7 @@
 
 import { SimpleGoodItem } from "./collectables/good.js";
 import { canvas } from "./common/canvas.js";
-import { Player } from "./player.js";
+import { Player, Player2 } from "./player.js";
 
 export class GameManager {
 	constructor() {
@@ -29,8 +29,11 @@ export class GameManager {
 		let p1 = new Player(canvas.width / 2, canvas.height / 2);
 		p1.x -= p1.width / 2;
 		p1.y -= p1.height / 2;
-
+        let p2 = new Player2(canvas.width / 3, canvas.height / 3);
+		p2.x -= p1.width / 3;
+		p2.y -= p1.height / 3;
 		this.players.push(p1);
+        this.players.push(p2);
 	}
 
 	update(elapsedTime) {
